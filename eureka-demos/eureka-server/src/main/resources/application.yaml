@@ -1,0 +1,91 @@
+spring:
+  profiles:
+    active: server1
+#eureka: 
+#  client: 
+#    serviceUrl:
+#      defaultZone: http://server1:8761/eureka/,http://server2:8762/eureka/,http://server3:8763/eureka/
+      
+---
+spring: 
+  application:
+    name: eureka-server
+  profiles: server1
+
+server:
+  port: 8761
+  
+eureka: 
+  datacenter: dc1
+  instance: 
+    hostname: server1    
+  server:
+    peer-node-read-timeout-ms: 500
+    waitTimeInMsWhenSyncEmpty: 1
+    enableSelfPreservation: true    
+  client: 
+    #单节点时不用注册自身，集群模式修改为true
+    registerWithEureka: false
+    # 和获取注册信息，集群模式修改为true
+    fetchRegistry: false
+    # 集群模式注释掉serviceUrl配置
+    serviceUrl:
+      defaultZone: http://server1:8761/eureka/
+    
+---
+spring:
+  application:
+    name: eureka-server
+  profiles: server2
+#  cloud:
+#    inetutils:
+#      preferredNetworks:
+#        - 192.168
+#      ignoredInterfaces:
+#        - docker0
+#        - veth.*
+server:
+  port: 8762
+  
+eureka: 
+  datacenter: dc1
+  instance: 
+    hostname: server2
+  server:
+    peer-node-read-timeout-ms: 500
+    waitTimeInMsWhenSyncEmpty: 1
+    enableSelfPreservation: true    
+  client: 
+    registerWithEureka: true
+    fetchRegistry: true
+#    serviceUrl:
+#      defaultZone: http://server2:8762/eureka/    
+
+---
+spring:
+  application:
+    name: eureka-server
+  profiles: server3
+#  cloud:
+#    inetutils:
+#      preferredNetworks:
+#        - 192.168
+#      ignoredInterfaces:
+#        - docker0
+#        - veth.*
+server:
+  port: 8763
+  
+eureka: 
+  datacenter: dc1
+  instance: 
+    hostname: server3
+  server:
+    peer-node-read-timeout-ms: 500
+    waitTimeInMsWhenSyncEmpty: 1
+    enableSelfPreservation: true    
+  client: 
+    registerWithEureka: true
+    fetchRegistry: true
+#    serviceUrl:
+#      defaultZone: http://server1:8763/eureka/    
