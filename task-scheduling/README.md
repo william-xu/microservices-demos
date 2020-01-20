@@ -12,8 +12,8 @@ SpringBoot版本: 2.1.11.RELEASE
 ## Spring任务
 配置了3种任务：
 * 使用注解创建的，按照固定频率执行的任务： @Scheduled(fixedRate = 1000 * 15)
-* 使用注解创建的，在设定时间点执行的任务：@Scheduled(cron = "0/28 * * * * ?")
-* 实现SchedulingConfigurer接口创建的任务
+* 使用注解创建的，在设定时间点执行的任务： @Scheduled(cron = "0/28 * * * * ?")
+* 实现SchedulingConfigurer接口创建的任务以及动态调整执行时间，使用nacos做配置中心，需要nacos服务器以及添加相关依赖
 
 ## nacos上项目的配置
  Data ID: task-scheduling.yml 

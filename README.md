@@ -3,10 +3,10 @@
 放置微服务相关学习示例
 
 # 框架、软件版本
-Spring Boot：  2.1.11.RELEASE
-Spring Cloud： Greenwich.SR4
-Maven： 3.6.0+
-
+ Spring Boot：  2.1.11.RELEASE
+ Spring Cloud： Greenwich.SR4
+ Maven： 3.6.0+
+ 
 
 # 示例说明
 
@@ -34,9 +34,4 @@ hello-service的消费服务，三种方式调用hello-service:
 ## task-scheduling
 
 定时任务示例
-需要MySQL数据库
-
-
-
-
-
+需要MySQL数据库,Nacos配置中心
