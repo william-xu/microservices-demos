@@ -90,3 +90,6 @@ CREATE TABLE `undo_log` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `ux_undo_log` (`xid`,`branch_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
+insert into db_storage.storage_tbl(commodity_code,count) values('product-1',10000),('product-2',20000),('product-3',20000);
