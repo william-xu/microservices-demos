@@ -42,11 +42,11 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<modules>
-		<!--<module>seata-demos</module>--> 
+	<modules> 
 		<module>eureka-demos</module>
-				
-		<module>task-scheduling</module>		 
+		<module>task-scheduling</module>
+		<module>seata-demos</module>
+		<module>nacos-demos</module>
 	</modules>
 
 	<build>

@@ -1,0 +1,19 @@
+{
+	"app": {
+		"name": "Spring Boot Actuator Info Endpoint Configuration Example",
+		"description": "This tutorial demonstrates how to customize the Spring Boot Actuator Info Endpoint."
+	},
+	"build": {
+		"groupId": "org.xwl.msd",
+		"artifact": "hello-service",
+		"name": "hello-service",
+		"version": "0.0.1-SNAPSHOT"
+	},
+	"env": {
+		"java": {
+			"vendor": "Oracle Corporation",
+			"vm-name": "Java HotSpot(TM) 64-Bit Server VM",
+			"runtime-version": "1.8.0_151-b12"
+		}
+	}
+}
