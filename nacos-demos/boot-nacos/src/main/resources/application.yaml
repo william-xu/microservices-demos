@@ -5,13 +5,29 @@ server:
   
 spring:
   application:
-    name: boot-nacos
+    name: boot-nacos-demo
     
 nacos:
   config:
     server-addr: 192.168.43.104:8848
   discovery:
     server-addr: 192.168.43.104:8848
+    auto-register: true
+    register:
+      ip: 127.0.0.1
+      port: 9100
+      enabled: true
+      healthy: true
+
+#nacos.discovery.auto-register=true
+#nacos.discovery.register.ip=1.1.1.1
+#nacos.discovery.register.port=1
+#nacos.discovery.register.weight=0.6D
+#nacos.discovery.register.healthy=false
+#nacos.discovery.register.enabled=true
+#nacos.discovery.register.ephemeral=true
+#nacos.discovery.register.clusterName=SPRINGBOOT
+#nacos.discovery.register.groupName=BOOT
 
 management:
   endpoints:

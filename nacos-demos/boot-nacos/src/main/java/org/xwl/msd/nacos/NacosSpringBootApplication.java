@@ -25,9 +25,6 @@ public class NacosSpringBootApplication {
 		SpringApplication.run(NacosSpringBootApplication.class, args);
 	}
 
-
 }
-
-
 
 
