@@ -23,7 +23,7 @@ public class TaskSchedulingApplication {
 	
 	@GetMapping("/")
 	public String home() {
-		return "Current Cron Expression is :" + taskConf.getCustCronExpr();
+		return "Current Cron Expression is :" + taskConf.getCustCronExpr1();
 	}	
 	
 	public static void main(String[] args) {
