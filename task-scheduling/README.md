@@ -23,7 +23,8 @@ SpringBoot版本: 2.1.11.RELEASE
 ```
 quartz:
   cust:
-    custCronExpr: 0/33 * * * * ?
+    custCronExpr1: 0/15 * * * * ?
+    custCronExpr2: 0/40 * * * * ?
 ```
 
 ## Quartz任务
