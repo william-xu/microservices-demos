@@ -1,5 +1,5 @@
 package org.xwl.task.service;
 
-public interface OtherBizService {
+public interface TaskService {
 	public void execute();
 }
