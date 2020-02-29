@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.xwl.msd</groupId>
+		<artifactId>seata-demos</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>spring-cloud-nacos-seata</artifactId>
+	<packaging>pom</packaging>
+	<name>spring-cloud-nacos-seata</name>
+	<description>Spring cloud nacos seata demo</description>
+
+    <modules>
+        <module>base-framework-mysql-support</module>
+        <module>order-service</module>
+        <module>storage-service</module>
+    </modules>
+
+	<properties>
+		<seata.version>1.0.0</seata.version>
+		<mybatis-plus.version>3.1.1</mybatis-plus.version>
+		<druid-boot-starter.version>1.1.10</druid-boot-starter.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-all</artifactId>
+                <version>${seata.version}</version>
+            </dependency>
+            
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid-boot-starter.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>            
+            
+		</dependencies>
+	</dependencyManagement>
+    
+</project>
