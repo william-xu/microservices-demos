@@ -47,6 +47,8 @@
 		<module>task-scheduling</module>
 		<module>seata-demos</module>
 		<module>nacos-demos</module>
+		<module>distlock-spring-boot-starter</module>
+		<module>nginx-demos</module>
 	</modules>
 
 	<build>

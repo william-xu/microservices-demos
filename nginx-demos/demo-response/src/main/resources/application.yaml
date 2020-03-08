@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: resp01
+    
+---
+spring:
+  application:
+    name: resp01
+  profiles: resp01
+
+server:
+  port: 9901
+  servlet:
+    contextPath: /demo-response
+
+---
+spring:
+  application:
+    name: resp02
+  profiles: resp02
+  
+server:
+  port: 9902
+  servlet:
+    contextPath: /demo-response
+
+---
+spring: 
+  application:
+    name: resp03
+  profiles: resp03
+
+server:
+  port: 9903
+  servlet:
+    contextPath: /demo-response

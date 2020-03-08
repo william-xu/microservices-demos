@@ -1,0 +1,14 @@
+server:
+  port: 9900
+  servlet:
+    contextPath: /demo-request
+  
+spring:
+  application:
+    name: demo-request
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"        
