@@ -43,12 +43,13 @@
 	</dependencyManagement>
 
 	<modules> 
-		<module>eureka-demos</module>
-		<module>task-scheduling</module>
-		<module>seata-demos</module>
-		<module>nacos-demos</module>
 		<module>distlock-spring-boot-starter</module>
+		<module>eureka-demos</module>		
+		<module>nacos-demos</module>	
 		<module>nginx-demos</module>
+		<module>seata-demos</module>
+		<module>security-demos</module>		
+		<module>task-scheduling</module>
 	</modules>
 
 	<build>

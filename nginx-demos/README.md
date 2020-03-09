@@ -5,7 +5,9 @@ Nginx反向代理示例
 接收方项目，使用不同profiles启动
 
 java -jar target\demo-response-01-0.0.1-SNAPSHOT.jar --spring.profiles.active=resp01
+
 java -jar target\demo-response-01-0.0.1-SNAPSHOT.jar --spring.profiles.active=resp02
+
 java -jar target\demo-response-01-0.0.1-SNAPSHOT.jar --spring.profiles.active=resp03
 
 或者
