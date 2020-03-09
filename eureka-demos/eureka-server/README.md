@@ -22,10 +22,13 @@ linux下面是etc/hosts文件
 
 ### 集群模式
 需要修改配置文件，重新编译后， 打开三个命令行窗口，分别执行以下命令
+
 窗口1：
-java -jar target\eureka-server-0.0.1-SNAPSHOT.jar
+ java -jar target\eureka-server-0.0.1-SNAPSHOT.jar
+
 窗口2：
-java -jar target\eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=server2
+ java -jar target\eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=server2
+
 窗口3：
-java -jar target\eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=server3
+ java -jar target\eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=server3
 
