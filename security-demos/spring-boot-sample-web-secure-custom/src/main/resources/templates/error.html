@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Error</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+	href="../../css/bootstrap.min.css" />
+</head>
+<script type="text/javascript" th:src="@{/js/jquery-3.4.1.min.js}"></script>
+
+<script th:inline="javascript">
+    function logout(){
+    	/**
+    	jQuery.post("/logout",
+    			{"_csrf": $("input[name='_csrf']").val()},
+    			function(data) {
+    		  		window.location="/login";
+    			}
+    	); 
+    	*/
+    	/*
+    	$.ajax({
+    	　　　　url:"/logout",
+    	　　　　type:"POST",
+    	　　　　data: {"_csrf": $("input[name='_csrf']").val()},
+    	　　　　datatype: "JSON",
+    	　　　　success: function(data){
+    				window.location="/login"; 
+    	　　　　}
+    	});
+    	*/
+		$("#logout_form").submit();    	
+    }
+</script>
+<body>
+	<div class="container">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<a class="brand" href="https://www.thymeleaf.org"> Thymeleaf -
+					Plain </a>
+				<ul class="nav">
+					<li><a th:href="@{/}" href="home.html"> Home </a></li>
+					<li><a th:href="'javascript:logout()'" href="#"> Logout </a></li>
+				</ul>
+			</div>
+		</div>
+		<h1 th:text="${title}">Title</h1>
+		<div id="created" th:text="${#dates.format(timestamp)}">July 11,
+			2012 2:17:16 PM CDT</div>
+		<div>
+			There was an unexpected error (type=<span th:text="${error}">Bad</span>, status=<span th:text="${status}">500</span>).
+		</div>
+		<div th:text="${message}">Fake content</div>
+		<div>
+			Please contact the operator with the above information.
+		</div>		
+		  <form id="logout_form" th:action="@{/logout}" method="post" >
+            	<input type="submit" value="Sign Out"/>
+          </form>
+	</div>
+</body>
+</html>
