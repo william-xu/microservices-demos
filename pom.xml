@@ -43,6 +43,7 @@
 	</dependencyManagement>
 
 	<modules> 
+		<module>consul-demos</module>
 		<module>distlock-spring-boot-starter</module>
 		<module>eureka-demos</module>		
 		<module>nacos-demos</module>	
