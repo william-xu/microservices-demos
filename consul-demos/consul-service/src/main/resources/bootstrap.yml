@@ -1,0 +1,36 @@
+management:
+#  server:
+#    port: 4403
+  endpoints:
+    web:
+      exposure:
+        include: shutdown,health,info
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+  health:
+    consul:
+      enabled: true
+      
+spring:
+  application:  
+    name: consul-service
+  profiles:
+    active: server1
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery: 
+        healthCheckPath: ${server.servlet.contextPath}/actuator/health
+        healthCheckInterval: 3s
+        preferIpAddress: true
+        instance-id: consul-service
+        instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+#        serviceName: msd-${spring.application.name}
+      config:
+        format: YAML
+        enabled: true
+        prefix: config

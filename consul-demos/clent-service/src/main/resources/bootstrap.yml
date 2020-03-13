@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: client-service
+  profiles:
+    active: dev
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        register: false
