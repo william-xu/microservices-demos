@@ -5,13 +5,14 @@
 	
 	<groupId>org.xwl.msd</groupId>
 	<artifactId>microservices-demos</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${msd.version}</version>
 	<packaging>pom</packaging>
 	<name>microservices-demos</name>
 	<description>Microservices Demos</description>
 
 	<properties>
 		<!-- java & encoding -->
+		<msd.version>0.0.1-SNAPSHOT</msd.version>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- Spring -->
@@ -39,6 +40,48 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+
+			<dependency>
+				<groupId>org.xwl.msd</groupId>
+				<artifactId>consul-demos</artifactId>
+				<version>${msd.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.xwl.msd</groupId>
+				<artifactId>distlock-spring-boot-starter</artifactId>
+				<version>${msd.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.xwl.msd</groupId>
+				<artifactId>eureka-demos</artifactId>
+				<version>${msd.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.xwl.msd</groupId>
+				<artifactId>nacos-demos</artifactId>
+				<version>${msd.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.xwl.msd</groupId>
+				<artifactId>nginx-demos</artifactId>
+				<version>${msd.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.xwl.msd</groupId>
+				<artifactId>seata-demos</artifactId>
+				<version>${msd.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.xwl.msd</groupId>
+				<artifactId>security-demos</artifactId>
+				<version>${msd.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.xwl.msd</groupId>
+				<artifactId>task-scheduling</artifactId>
+				<version>${msd.version}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
