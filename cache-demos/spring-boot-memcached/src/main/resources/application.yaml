@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: boot-study
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        # 为什么这里不加双引号会出错？
+        include: "*"
