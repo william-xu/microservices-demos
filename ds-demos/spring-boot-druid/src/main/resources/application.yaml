@@ -1,0 +1,11 @@
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # 为什么这里不加双引号会出错？
+        include: "*"
+# 数据源配置
+spring:
+  application:
+    name: boot-druid
