@@ -5,7 +5,7 @@
 	
 	<groupId>org.xwl.msd</groupId>
 	<artifactId>microservices-demos</artifactId>
-	<version>${msd.version}</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>microservices-demos</name>
 	<description>Microservices Demos</description>

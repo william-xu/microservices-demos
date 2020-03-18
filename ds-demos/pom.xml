@@ -13,6 +13,7 @@
 	<description>Datasource related demos</description>
 
 	<modules> 
+		<module>spring-boot-canal</module>
 		<module>spring-boot-druid</module>
 	</modules>
 	

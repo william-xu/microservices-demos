@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: boot-study
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

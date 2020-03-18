@@ -71,5 +71,22 @@ consul相关示例
 #### client-service
 调用consul服务的客户端
 
+## cache-demos
+
+#### spring-boot-memcached
+memcached 连接以及简单操作
+
+ 
+## ds-demos
+数据库相关
+
+#### spring-boot-canal
+使用canal以及rocketmq同步mysql数据库更新到redis
+
+#### spring-boot-druid
+druid的简单使用
+
+
+
 
 
