@@ -17,34 +17,33 @@ import com.alibaba.otter.canal.protocol.FlatMessage;
 
 @Service
 @RocketMQMessageListener(topic = "${demo.rocketmq.topic}", consumerGroup = "example_consumer")
-public class ExampleConsumer implements RocketMQListener<String> {
+public class ExampleConsumer implements RocketMQListener<FlatMessage> {
 	
 	@Autowired
 	private StringRedisTemplate redisTemplate;
 	
     @Override
-    public void onMessage(String message) {
+    public void onMessage(FlatMessage message) {
 
-    	System.out.printf("------- Message received: %s \n", message);
-    	
+    	System.out.printf("------- Message received: %s \n", message);    	
     	try {
-    		FlatMessage msg = JSON.parseObject(message, FlatMessage.class);
-    		List<Map<String,String>>ds = msg.getData();
-
+    		List<Map<String,String>>ds = message.getData();
     		Map<String,String> insertOrUpdate = new HashMap<>();
     		ArrayList<String> delList = new ArrayList<>();
-    		ds.forEach((m)->{
-    			if("user".equalsIgnoreCase(msg.getTable())) {
-    				String userStr = JSON.toJSONString(m);
-        			User u = JSON.parseObject(userStr,User.class);
-        			if(u != null) System.out.println(u);
-        			if("INSERT".equalsIgnoreCase(msg.getType()) || "UPDATE".equalsIgnoreCase(msg.getType())) {
-        				insertOrUpdate.put(u.getUserId(), userStr);
-        			}else if("DELETE".equalsIgnoreCase(msg.getType())) {
-        				delList.add(u.getUserId());
-        			}        			
-        		}
-    		});
+    		if(ds != null && ds.size()>0) {
+        		ds.forEach((m)->{
+        			if("user".equalsIgnoreCase(message.getTable())) {
+        				String userStr = JSON.toJSONString(m);
+            			User u = JSON.parseObject(userStr,User.class);
+            			if(u != null) System.out.println(u);
+            			if("INSERT".equalsIgnoreCase(message.getType()) || "UPDATE".equalsIgnoreCase(message.getType())) {
+            				insertOrUpdate.put(u.getUserId(), userStr);
+            			}else if("DELETE".equalsIgnoreCase(message.getType())) {
+            				delList.add(u.getUserId());
+            			}        			
+            		}
+        		});    			
+    		}
     		//删除
     		if(delList.size()>0) {
     			Object[] users = new String[delList.size()];
