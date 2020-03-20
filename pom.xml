@@ -48,12 +48,27 @@
 			</dependency>
 			<dependency>
 				<groupId>org.xwl.msd</groupId>
+				<artifactId>cache-demos</artifactId>
+				<version>${msd.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.xwl.msd</groupId>
 				<artifactId>distlock-spring-boot-starter</artifactId>
 				<version>${msd.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.xwl.msd</groupId>
+				<artifactId>ds-demos</artifactId>
+				<version>${msd.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.xwl.msd</groupId>
 				<artifactId>eureka-demos</artifactId>
+				<version>${msd.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.xwl.msd</groupId>
+				<artifactId>mq-demos</artifactId>
 				<version>${msd.version}</version>
 			</dependency>
 			<dependency>
@@ -81,16 +96,6 @@
 				<artifactId>task-scheduling</artifactId>
 				<version>${msd.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>org.xwl.msd</groupId>
-				<artifactId>ds-demos</artifactId>
-				<version>${msd.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.xwl.msd</groupId>
-				<artifactId>cache-demos</artifactId>
-				<version>${msd.version}</version>
-			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -100,6 +105,7 @@
 		<module>distlock-spring-boot-starter</module>
 		<module>ds-demos</module>
 		<module>eureka-demos</module>
+		<module>mq-demos</module>
 		<module>nacos-demos</module>
 		<module>nginx-demos</module>
 		<module>seata-demos</module>

@@ -9,7 +9,7 @@
 	</parent>
 	<artifactId>ds-demos</artifactId>
 	<packaging>pom</packaging>
-	<name>Datasource related demos</name>
+	<name>ds-demos</name>
 	<description>Datasource related demos</description>
 
 	<modules> 

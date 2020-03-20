@@ -1,0 +1,45 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: demoExchange
+          binder: rabbit104
+          group: queue_01
+        remote_input:
+          destination: demoExchange
+          binder: rabbit250
+          group: queue_02
+      rabbit:
+        bindings: 
+          input:
+            consumer:
+              queueNameGroupOnly: true
+          remote_input:
+            consumer:
+              queueNameGroupOnly: true
+              
+      binders:
+        rabbit250:
+          type: rabbit
+         #如果不设置默认候选为false会导致在其他实例创建绑定到当前实例的队列
+          defaultCandidate: false
+          environment:
+            spring:
+              rabbitmq: 
+                host: 192.168.43.250
+                port: 5672
+                username: xwl
+                password: 123456
+                virtual-host: /demo80
+        rabbit104:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq: 
+                host: 192.168.43.104
+                port: 5672
+                username: admin
+                password: nzdx
+                virtual-host: /demo104
+            
