@@ -87,6 +87,31 @@ memcached 连接以及简单操作
 druid的简单使用
 
 
+## nginx-demos
+
+#### demo-response
+nginx代理的启动多个实例的接收项目
+
+#### demo-request
+客户端调用demo-response的nginx代理地址。
+
+
+## mq-demos
+
+#### spring-cloud-stream-rabbitmq
+接收两个主机rabbitmq实例的消息
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
