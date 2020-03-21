@@ -1,14 +1,13 @@
 package org.xwl.msd.boot.rabbitmq.conf;
 
+import org.springframework.amqp.core.AcknowledgeMode;
 import org.springframework.amqp.rabbit.annotation.RabbitListenerAnnotationBeanPostProcessor;
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
-import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.listener.RabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.amqp.RabbitProperties;
 import org.springframework.boot.autoconfigure.amqp.SimpleRabbitListenerContainerFactoryConfigurer;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -65,6 +64,7 @@ public class RabbitMqConfig {
 	public RabbitListenerContainerFactory<SimpleMessageListenerContainer> primaryContainerFactory(
 			SimpleRabbitListenerContainerFactoryConfigurer configurer) {
 		SimpleRabbitListenerContainerFactory containerFactory = new SimpleRabbitListenerContainerFactory();
+		containerFactory.setAcknowledgeMode(AcknowledgeMode.MANUAL);
 		configurer.configure(containerFactory, primaryRabbitFactory());
 		return containerFactory;
 	}

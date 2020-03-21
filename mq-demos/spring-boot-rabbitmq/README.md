@@ -3,9 +3,10 @@
 ## 简介
 
 Spring Boot连接两个RabbitMQ实例
-运行前需要在104主机的虚拟主机/demo104上面创建队列boot_queue_01，
+运行前需要在104主机的虚拟主机/demo104上面创建队列boot_queue_01，/demo250上面创建boot_queue_03队列
 /demo250上面的boot_queue_02会自动创建，队列设置为不持久化重启就没了
 
+250主机上的消息设置为需要确认，boot_queue_02代码写死需要确认，boot_queue_03则不进行确认。可在控制台手动消费掉。
 
 ## 依赖项
 
