@@ -7,7 +7,7 @@
 	-->
 <Configuration status="info">
     <Properties>
-        <Property name="PROJECT_NAME">quickstart</Property>
+        <Property name="PROJECT_NAME">cloud-sentinel</Property>
     </Properties>
     <Appenders>
         <RollingFile name="rfError" fileName="logs/${PROJECT_NAME}.error.log" filePattern="logs/$${date:yyyy-MM}/${PROJECT_NAME}_error_%d{yyyy-MM-dd}.log.gz">
