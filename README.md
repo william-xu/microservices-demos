@@ -99,13 +99,20 @@ nginx代理的启动多个实例的接收项目
 ## mq-demos
 
 #### spring-cloud-stream-rabbitmq
+使用Spring cloud stream binder 
 接收两个主机rabbitmq实例的消息
 
 
+#### spring-boot-rabbitmq
+
+Spring boot 应用连接rabbitmq
 
 
+## sentinel-demos
 
+#### spring-cloud-sentinel
 
+Spring Cloud使用sentinel进行流量限制，规则配置在nacos上可动态修改
 
 
 

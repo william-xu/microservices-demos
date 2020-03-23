@@ -1,7 +1,4 @@
-# Nacos Demos
+# Sentinel Demos
 
-## boot-nacos
-nacos in Spring boot application 
-
-## cloud-nacos
-nacos in Spring Cloud application
+## spring-cloud-sentinel
+Sentinel usage in Spring Cloud application 

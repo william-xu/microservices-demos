@@ -1,5 +1,8 @@
 # spring-cloud-sentinel
 
+Spring Cloud使用sentinel进行限流，配置保存在nacos上，同时也有nacos多配置使用示例。
+(未完成)
+
 
 ## 动态数据源支持
 https://github.com/alibaba/spring-cloud-alibaba/wiki/Sentinel
@@ -43,11 +46,72 @@ rule-type 配置表示该数据源中的规则属于哪种类型的规则(flow�
 
 
 ### 其他备忘
-http://localhost:12403/cloud-sentinel/
+
+**拒绝访问**
+http://localhost:12403/cloud-sentinel/test1   
+**设置QPS访问限制**
+http://localhost:12403/cloud-sentinel/hello
+
+**设置fallback和异常处理**
+http://localhost:12403/cloud-sentinel/test2
+（未完成)
 
 
 
+### nacos上的配置
 
+**配置一：**
+Data ID: cloud-sentinel.yaml
+Group:   DEFAULT_GROUP
+
+使用yaml格式，配置项只有一个：
+
+`homeText: "Hello, Sentinel!"`
+
+**配置二：**
+
+Data ID: sentinel
+Group:   sentinel-group
+
+使用JSON格式，配置内容如下：
+
+```
+[
+  {
+    "resource": "/hello",
+    "controlBehavior": 0,
+    "count": 2,
+    "grade": 1,
+    "limitApp": "default",
+    "strategy": 0
+  },
+  {
+    "resource": "/test1",
+    "controlBehavior": 0,
+    "count": 0,
+    "grade": 1,
+    "limitApp": "default",
+    "strategy": 0
+  },
+  {
+    "resource": "/test2",
+    "controlBehavior": 0,
+    "count": 2,
+    "grade": 1,
+    "limitApp": "default",
+    "strategy": 0
+  }
+]
+```
+
+**配置三：**
+
+Data ID: sentinel-multi1.properties
+Group:   sentinel-group
+
+使用Properties格式，配置内容如下：
+
+`extendedValue=" value from extended configuration"`
 
 
 

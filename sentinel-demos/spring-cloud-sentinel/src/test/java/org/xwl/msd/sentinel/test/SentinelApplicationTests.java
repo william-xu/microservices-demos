@@ -1,10 +1,10 @@
-package com.example.quickstart;
+package org.xwl.msd.sentinel.test;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class QuickstartApplicationTests {
+class SentinelApplicationTests {
 
 	@Test
 	void contextLoads() {
