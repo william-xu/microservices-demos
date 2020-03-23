@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The status logger is used internally by log4j2 components. 
+	Setting status="debug" (or "trace") in the configuration will 
+	cause this internal logging to be output to the command line.
+	就是说有个名称为status的内置logger，如果设置为debug或者trace的话，
+	则会输出该logger所处理的相关级别的信息
+	-->
+<Configuration status="info">
+    <Properties>
+        <Property name="PROJECT_NAME">quickstart</Property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="rfError" fileName="logs/${PROJECT_NAME}.error.log" filePattern="logs/$${date:yyyy-MM}/${PROJECT_NAME}_error_%d{yyyy-MM-dd}.log.gz">
+        	<!-- 只输出错误级别的日志 -->
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <Pattern>%d [%p] %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile name="rfInfo" fileName="logs/${PROJECT_NAME}.info.log" filePattern="logs/$${date:yyyy-MM}/${PROJECT_NAME}_info_%d{yyyy-MM-dd}.log.gz">
+        	<!-- 只输出warn（包含）到debug（包含）级别的日志，注意log4j2的级别数值与严重程度相反 -->
+            <LevelRangeFilter minLevel="warn" maxLevel="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+	    <Console name="Console" target="SYSTEM_OUT">
+	    	<Filters>
+	    		<!-- 配置控制台只输出error和info级别的信息，需要按照级别从小到大进行处理才生效的样子 -->
+		    	<ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="NEUTRAL"/>
+		    	<ThresholdFilter level="warn" onMatch="DENY" onMismatch="NEUTRAL"/>
+		    	<ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+	    	</Filters>
+	      	<PatternLayout pattern="%d [%p] %c{1.} [%t] %m%n"/>
+	    </Console>
+    </Appenders>
+    <Loggers>
+    	<!-- 对org.springframework下面的类只输出错误级别的日志 -->
+    	<Logger name="org.springframework" level="ERROR"/>
+    	<Logger name="org.thymeleaf" level="ERROR"/>
+    	<Logger name="com.alibaba.nacos" level="ERROR"/>
+    	 
+    	<!-- 处理所有级别的日志 -->
+        <Root level="ALL">
+            <AppenderRef ref="rfError"/>
+            <AppenderRef ref="rfInfo"/>
+            <appender-ref ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>

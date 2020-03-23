@@ -93,6 +93,11 @@
 			</dependency>
 			<dependency>
 				<groupId>org.xwl.msd</groupId>
+				<artifactId>sentinel-demos</artifactId>
+				<version>${msd.version}</version>
+			</dependency>			
+			<dependency>
+				<groupId>org.xwl.msd</groupId>
 				<artifactId>task-scheduling</artifactId>
 				<version>${msd.version}</version>
 			</dependency>
@@ -110,6 +115,7 @@
 		<module>nginx-demos</module>
 		<module>seata-demos</module>
 		<module>security-demos</module>
+		<module>sentinel-demos</module>
 		<module>task-scheduling</module>
 	</modules>
 
